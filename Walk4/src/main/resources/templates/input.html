@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>入力ページ</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<form th:action="@{/output}" th:object="${demoForm}" method="post">
+		<div class="naraberu">
+			<img id="walk" src="walk.jpg" alt="歩く">
+			<p class="center">どこまで行きたい？</p>
+			<img id="walk" src="walk.jpg" alt="歩く">
+		</div>
+		<ul>
+			<li><input type="radio" th:field="*{goal}" value=0>世界一背の高い人間
+				272cm</li>
+			<li><input type="radio" th:field="*{goal}" value=1>シロナガスクジラ
+				30m</li>
+			<li><input type="radio" th:field="*{goal}" value=2>世界最大のプラネタリウム
+				名古屋市科学館 ドーム直径 35m</li>
+			<li><input type="radio" th:field="*{goal}" value=3>世界一深いプール
+				40m</li>
+			<li><input type="radio" th:field="*{goal}" value=4>アルゼンチノサウルス
+				45m</li>
+			<li><input type="radio" th:field="*{goal}" value=5>紙飛行機の
+				最長飛行記録(2022年) 77.134m</li>
+			<li><input type="radio" th:field="*{goal}" value=6>世界一高くまで吹きあがる噴水
+				サウジアラビアのファハド王の噴水 260m</li>
+			<li><input type="radio" th:field="*{goal}" value=7>世界一高いビル
+				プルジュ・ハリーファ 162階建て 828m</li>
+			<li><input type="radio" th:field="*{goal}" value=8>富士山
+				3776m</li>
+			<li><input type="radio" th:field="*{goal}" value=9>エベレスト
+				8848m</li>
+			<li><input type="radio" th:field="*{goal}" value=10>マリアナ海溝
+				10994m</li>
+			<li><input type="radio" th:field="*{goal}" value=11>成層圏まで
+				100km</li>
+			<li><input type="radio" th:field="*{goal}" value=12>世界一孤立している島
+				トリスタンダクーニャ島（イギリス領）<br> 人間が定住する最も近い陸地のセントヘレナ島からの距離 2429km</li>
+			<li><input type="radio" th:field="*{goal}" value=13>万里の長城
+				8851.8km</li>
+			<li><input type="radio" th:field="*{goal}" value=14>地球から月まで
+				38万4000km</li>
+			<li><input type="radio" th:field="*{goal}" value=15>地球から太陽まで
+				1億4959万8262km</li>
+			<li><input type="radio" th:field="*{goal}" value=16>太陽から海王星まで
+				44億9839万6441km</li>
+		</ul>
+
+		<table>
+			<tr th:if="${validationError}" th:each="error : ${validationError}">
+				<td class="error" th:text="${error}"></td>
+			</tr>
+		</table>
+		<p>
+			<label>今日は何歩歩きましたか？ <input class="text" type="text"
+				th:field="*{steps}"></label>
+		</p>
+
+		<p>
+			<input class="submit" type="submit" value="go to result →" />
+		</p>
+	</form>
+</body>
+</html>

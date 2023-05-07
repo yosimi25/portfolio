@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+body {
+	font-family: cursive;
+	color: grgb(113, 111, 111);
+	line-height: 2em;
+	margin: 2em;
+	background-color: #e3f4fb;
+}
+
+p {
+	margin: 10px;
+	font-size: 19px;
+}
+
+li {
+	margin: 0px 10px;
+	background-color: none;
+	font-size: 18px;
+}
+
+.text {
+	border: 1px solid gray; /* 枠線 */
+	border-radius: 0.5em; /* 角丸 */
+	padding: 0.5em; /* 内側の余白量 */
+	background-color: snow; /* 背景色 */
+	font-size: 1em; /* 文字サイズ */
+	line-height: 0.5; /* 行の高さ */
+}
+
+.center {
+	margin: 10px;
+	text-align: center;
+	font-size: 1.5em;
+}
+/*送信ボタン*/
+.submit {
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 170px;
+	height: 33px;
+	border-radius: 10px;
+	margin: 10px 10px;
+	/*padding: 1rem 4rem;*/
+	font-weight: bold;
+	color: #fff;
+	font-size: 20px;
+	background: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+	background-position: 0% 50%;
+	background-size: 200% auto;
+}
+
+.submit:hover {
+	background-position: 100% 50%;
+}
+
+#topImg {
+	margin: none;
+	width: 100%;
+	animation-name: fadeUpAnime;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+	opacity: 0;
+}
+@keyframes fadeUpAnime {from { opacity:0;
+	transform: translateY(70px);
+}
+to {
+	opacity: 1;
+	transform: translateY(0);
+}
+}
+
+/*top画像に文字とボタンを重ねるための指定*/
+#top {
+	position: relative;
+}
+
+#topMsg {
+	font-family: 'Caveat', cursive;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 0;
+	margin: 0;
+	font-size: 50px;
+	color: white;
+	font-weight: bold;
+}
+
+/*topページのボタンの位置指定*/
+#submitBottom {
+	position: absolute;
+	bottom: 0%;
+	right: 0%;
+}
+
+/*input*/
+ul {
+	margin: 30px 0px 20px 20px;
+}
+
+li input {
+	margin:10px 10px 10px 0;
+}
+
+.naraberu {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#walk {
+	width: 200px;
+}
+
+/*output*/
+.outputImage {
+	width: 350px;
+	margin: 0px 0 10px 0;
+}
+
+/*エラーメッセージ*/
+.error {
+	color: red;
+	font-size: 15px;
+}

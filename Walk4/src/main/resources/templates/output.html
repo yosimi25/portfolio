@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>出力ページ</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<form th:action="@{/input}" th:object="${demoForm}" method="post">
+		<div th:object="${demoForm}">
+			<p th:text="${message}"></p>
+			<th:block th:if="${lups < 1}">
+				<img class="outputImage" th:src="${image}">
+			</th:block>
+			<th:block th:if="${lups >= 1}">
+				<th:block th:each="${image},${image} : ${#numbers.sequence(1,lups)}">
+					<img class="outputImage" th:src="${image}">
+				</th:block>
+			</th:block>
+				<br>
+				<input class="submit" type="submit" value="← back to input">
+		</div>
+	</form>
+</body>
+</html>
